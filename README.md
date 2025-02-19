@@ -66,6 +66,7 @@ WATSONX_MODEL_ID_TEXT = "ibm/granite-3-8b-instruct"
 
 ```
 
+
 2. Update the `WATSONX_API_KEY` property with your data.
 
 They are weather API URL and key.
