@@ -26,7 +26,7 @@ class AgentResearchMain(object):
         self.logger.setLevel(os.environ.get('LOGLEVEL', 'INFO').upper())
 
     def invoke(self, payload):
-        self.logger.info("invoke started ... ")
+        self.logger.info("invoke started .... ")
 
         ### Retrive parameters
         input = payload["input"]
