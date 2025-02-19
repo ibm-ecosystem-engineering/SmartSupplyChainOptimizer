@@ -35,10 +35,15 @@ Create .env file with the below entries (you should be still in the root folder 
 LOGLEVEL = INFO
 
 WATSONX_IBMC_AUTH_URL = "https://iam.cloud.ibm.com/identity/token"
+
 WATSONX_CREDENTIALS_URL = "https://us-south.ml.cloud.ibm.com"
+
 WATSONX_API_URL = "https://us-south.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29"
+
 WATSONX_API_KEY = ""
+
 WATSONX_PROJECT_ID = "53302198-522e-49a6-ba45-b445d46db666"
+
 WATSONX_MODEL_ID_TEXT = "ibm/granite-3-8b-instruct"
 
 Update the WATSONX_API_KEY property with your data.
