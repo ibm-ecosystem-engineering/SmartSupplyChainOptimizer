@@ -1,11 +1,12 @@
 # SmartSupplyChainOptimizer
 The Smart Supply Chain Optimizer, enhances the logistics through predictive analytics. Optimize operations, and increase supply chain resilience with AI-driven insights
-Prerequisite
+
+# Prerequisite
 Python 3.x should be installed and available.
 
-1. Installation
+# Installation
 1.1 Download this repo
-Download this repo (https://github.ibm.com/sustainability-squad/crew-ai-agents-app).
+Download this repo ([https://github.com/ibm-ecosystem-engineering/SmartSupplyChainOptimizer/crew-ai-agents-app]).
 
 Let's assume the repository has been downloaded, and available in the location /Users/xyz/crew-ai-agents-app/src.
 
@@ -29,7 +30,7 @@ Install the required python packages by running the below command.
 
 python -m pip install -r requirements.txt
 1.3 Create .env file
-Create .env file with the below entries (you should be still in the root folder of the repo /Users/xyz/envizi-location-service )
+Create .env file with the below entries (you should be still in the root folder of the repo /Users/xyz/crew-ai-agents-app )
 # Environment variables
 LOGLEVEL = INFO
 
