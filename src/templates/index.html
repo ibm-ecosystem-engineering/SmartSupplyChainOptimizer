@@ -1,0 +1,21 @@
+
+{% include "header.html" %}
+
+<h2>Welcome to the Smart Supply Chain Optimizer </h2>
+<p>Ensure supply chain resilience by proactively identifying and mitigating risks related to supplier disruptions.</p>
+
+<img src="{{ url_for('static', filename='home.jpeg') }}" width="1200"  alt="Description of image">
+
+<div>
+    <p>&nbsp;</p>
+    <button onclick="orderCenter()">Order Center</button>
+</div>
+
+{% include "footer.html" %}
+
+<script>
+    function orderCenter(order_number, source_location) {
+            location.href = "/order_control"
+      }
+</script>
+    

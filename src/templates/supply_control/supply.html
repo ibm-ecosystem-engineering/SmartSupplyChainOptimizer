@@ -1,0 +1,101 @@
+{% include "header.html" %}
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+          <h1>Supply Distruption Detection</h1>
+        </div>
+          <div class="chat2-input">
+              <div class="input-group">
+                <label for="order_number">Order Number:&nbsp;&nbsp;</label>
+                <input type="text"  id="order_number" placeholder="Order Number" value ="{{ order_number }}" disabled>
+              </div>
+
+              <div class="input-group">
+                <label for="location">Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text"  id="location" placeholder="Location" value ="{{ location }}" disabled>&nbsp;&nbsp;
+                <button id="fetch-button"  type = "submit" onclick="fetchAlternateSupplier()">Fetch Alternate Supplier</button>
+            </div>
+          </div>
+        </div>
+        <div class="chatbot2-body">
+          <div class="chatbot2-header">
+            <h1>Weather Conditions</h1>
+          </div>
+            <div id="weather_table" class="chat2-display">
+          </div>
+        </div>
+        <div class="chatbot2-body">
+          <div class="chatbot2-header">
+            <h1>Alternate Suppliers</h1>
+          </div>
+          <div id="supplier_table" class="chat2-display">
+          </div>
+        </div>
+        <div>
+          <button onclick="backToOrderControl()">Back to Order Center</button>
+        </div>
+      </div>
+    
+{% include "footer.html" %}
+
+<script>
+
+function backToOrderControl(order_number, source_location) {
+        location.href = "/order_control"
+  }
+
+  function fetchAlternateSupplier() {
+      const order_number = document.getElementById("order_number").value.trim();
+      const location = document.getElementById("location").value.trim();
+
+      jsonString = JSON.stringify({ 
+            "order_number": order_number, 
+            "location": location,
+          })
+      callMyAPI(jsonString);
+    }
+    
+    // Add messages to the chat display
+    function callBackAfterAPI(data) {
+      console.log ("data --> " + data)
+      newTable = createTable(data.suppliers, true)
+      tableDiv = document.getElementById("supplier_table")
+      tableDiv.appendChild(newTable)
+      console.log ("newTable suppliers --> " + tableDiv)
+
+      console.log ("newTable data.weather_conditions--> " + data.weather_conditions)
+
+      newTable = createTable(data.weather_conditions, false)
+      tableDiv = document.getElementById("weather_table")
+      tableDiv.appendChild(newTable)
+      console.log ("newTable weather_table--> " + tableDiv)
+    }
+    
+    // Fetch bot response from an external API
+    async function callMyAPI(jsonString) {
+      const API_URL = BASE_API_URL + "/api/supply_control/invoke"; // Replace with your API endpoint
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            'Accept': 'application/json', 
+          },
+          body: jsonString ,
+        })
+    
+        if (!response.ok) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          throw new Error(`Failed to fetch response. Status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        const result = data.result || "I'm sorry, I couldn't process that."; // Default response
+
+        callBackAfterAPI(result);
+      } catch (error) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          callBackAfterAPI("Error: Unable to fetch response from the API.", "bot-message");
+      }
+
+    }
+</script>

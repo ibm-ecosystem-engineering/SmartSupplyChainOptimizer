@@ -1,0 +1,58 @@
+{"msg": "Success", 
+
+"result": {
+        "suggested_suppliers": [
+            {
+                "SNo": "1",
+                "Category": "Elite",
+                "SupplierName": "Supp1",
+                "City": "City1"
+            },
+            {
+                "SNo": "1",
+                "Category": "Premium",
+                "SupplierName": "Supp2",
+                "City": "City2"
+            },
+            {
+                "SNo": "1",
+                "Category": "Economy",
+                "SupplierName": "Supp3",
+                "City": "City3"
+            },
+            {
+                "SNo": "1",
+                "Category": "Large",
+                "SupplierName": "Supp4",
+                "City": "City4"
+            },
+            {
+                "SNo": "1",
+                "Category": "Elite",
+                "SupplierName": "Supp5",
+                "City": "City5"
+            },
+            {
+                "SNo": "1",
+                "Category": "Economy",
+                "SupplierName": "Supp6",
+                "City": "City6"
+            },
+            {
+                "SNo": "1",
+                "Category": "Elite",
+                "SupplierName": "Supp7",
+                "City": "City7"
+            }
+        ],
+        "weather_condition": {
+            "City1": "Sunny",
+            "City2": "Rainy",
+            "City3": "Snowy",
+            "City4": "Partly cloudy",
+            "City5": "Sunny",
+            "City6": "Windy",
+            "City7": "Cloudy"
+        }
+    }
+}

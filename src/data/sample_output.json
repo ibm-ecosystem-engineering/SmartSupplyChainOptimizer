@@ -1,0 +1,50 @@
+{
+        "weather_conditions": [
+          {
+            "location": "Memphis, Tennessee",
+            "temperature": "23°F (-5°C)",
+            "humidity": "97%",
+            "wind speed": "21 KM/H",
+            "risk of supply disruption": "High",
+            "description": "Light snow is currently falling in Memphis, with temperatures at 23°F (-5°C). A Winter Storm Warning is in effect until 12:00 PM CST on Wednesday, February 19, 2025. "
+          }
+        ],
+  "suppliers": [
+    {
+      "SNo": 1,
+      "Category": "Elite",
+      "SupplierName": "Schenker, Inc.",
+      "City": "Louisville"
+    },
+    {
+      "SNo": 2,
+      "Category": "Premium",
+      "SupplierName": "Kenco Logistics",
+      "City": "Bristol"
+    },
+    {
+      "SNo": 3,
+      "Category": "Economy",
+      "SupplierName": "C.H. Robinson",
+      "City": "Huntsville"
+    },
+    {
+      "SNo": 4,
+      "Category": "Large",
+      "SupplierName": "Nashville Logistics Hub",
+      "City": "Little Rock"
+    },
+    {
+      "SNo": 5,
+      "Category": "Economy",
+      "SupplierName": "J.B. Hunt Transport Services",
+      "City": "Knoxville"
+    },
+    {
+      "SNo": 6,
+      "Category": "Elite",
+      "SupplierName": "Amazon Supply Chain Network",
+      "City": "Clarksville"
+    }
+  ]
+}

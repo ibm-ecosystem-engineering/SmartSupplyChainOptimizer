@@ -1,0 +1,54 @@
+
+{% include "header.html" %}
+
+<h2>Order Center</h2>
+<h4>Identifying and mitigating risks related to supplier disruptions</h4>
+<table>
+    <thead>
+        <tr>
+            {% if data %}
+                {% for column in data[0].keys() %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+                <th>Risks</th>
+                <th>Action</th>  {# New column for buttons #}
+            {% else %}
+                <th>No Data</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+            <tr>
+                {% for value in row.values() %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+
+                {% if row['Source Location'] == 'Memphis,TN' or row['Source Location'] == 'Dallas,TX' %}
+                <td style="color:red;"> Weather issues</td>
+                <td>
+                    <button onclick="viewDetails(                        
+                         '{{ row['Order Number'] }}', 
+                         '{{ row['Source Location'] }}'
+                        )">
+                        View Details
+                    </button>
+                    &nbsp;
+                </td>
+                {% else %}
+                <td> </td>
+                <td> </td>
+                {% endif %} 
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    function viewDetails(order_number, source_location) {
+        location.href = "/supply_control?order_number=" + order_number + "&location=" + source_location
+    }
+</script>
+
+{% include "footer.html" %}

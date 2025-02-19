@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Layout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>  
+    <script src="{{ url_for('static', filename='script_table.js') }}" defer></script>  
+</head>
+<body>
+    <header class="top-menu">
+        <h1> Smart Supply Chain Optimizer</h1>
+        <nav class="top-nav">
+            <ul>
+                 <li> <a href="/">Home</a>     |    </li>
+               <!--  <li><a href="{{ url_for('api_main.order_control') }}" data-page="Research">Order center</a>    |    </li>
+                <li><a href="{{ url_for('api_supply_control.supply_control') }}" data-page="Weather">Supply Control</a>    |    </li>-->
+               
+                <li> <a href="{{ url_for('api_main.about') }}">About</a>     |    </li>
+                <li><a href="{{ url_for('api_main.contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="layout">
+        <main class="main-content" id="main-content">

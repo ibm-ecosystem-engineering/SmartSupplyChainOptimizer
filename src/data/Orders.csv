@@ -1,0 +1,9 @@
+Sl.no,Order Name,Order Number,Supplier,Source Location,Transit Location,Delivery Location,Date ,Status,Email
+1,CityCool,OM1000092,Flexilux,"Austin,TX","San Antonio,TX","New York City,NY",2025-02-19,Partially Scheduled,mack.rogers@flexilux.com
+2,CityCool,OM1000094,Lightlens,"Brooklyn,NY","Philadelphia,PA","Chicago,IL",2025-02-23,Draft Order Created,bonita.matthews@lex.com
+3,CityCool,OM1000093,Lightsource,"Manhattan,NY","Hartford,CT","Boston,MA",2025-02-22,Shipped,leona.beltran@lightsrc.com
+4,CityCool,OM1000095,Plastilite,"Memphis,TN","Tulsa,OK","Chicago,IL",2025-02-23,Draft Order Created,kermit.day@plastilite.com
+5,CityCool,OM1000098,ThermalDavidGreen,"New Yory City,NY","Kansas City,MO","Sunnyvale,CA",2025-02-23,Backordered,david.green@thermal.com
+6,CityCool,OM1000101,Benchmark,"Dallas,TX","Denver,CO","Sunnyvale,CA",2025-02-27,Draft Order Created,juan.cunningham@benchmark.com
+7,CityCool,OM1000099,LightTree,"Austin,TX","Dallas,TX","New York City,NY",2025-02-24,Shipped,jordon.morgan@lighttree.com
+8,CityCool,OM1000100,Lorel,"Manhattan,NY","Newark,NJ","Boston,MA",2025-02-26,Shipped,sebastian.mullen@lorel.com

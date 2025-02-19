@@ -1,0 +1,71 @@
+{% include "header.html" %}
+
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+          <h1>Research Paper using IBM Watsonx.ai LLM with DuckDuckGo Search and ScrapeWebsiteTool Agents</h1>
+        </div>
+        <div class="chatbot-body">
+          <div id="chat-display" class="chat-display">
+            <!-- Chat messages will be displayed here -->
+          </div>
+        </div>
+          <div class="chat-input">
+            <textarea id="user-input" placeholder="Type your question here..." rows="2"></textarea>
+            <button id="send-button"  onclick="processSend()">Send</button>
+          </div>
+        </div>
+      </div>
+    
+{% include "footer.html" %}
+
+<script>
+
+  function processSend() {
+      const userInput = document.getElementById("user-input").value.trim();
+      if (userInput) {
+        addMessage(userInput, "user-message");
+        fetchBotResponse(userInput);
+        document.getElementById("user-input").value = ""; // Clear the input
+      }
+    }
+    
+    
+    // Add messages to the chat display
+    function addMessage(message, className) {
+      const chatDisplay = document.getElementById("chat-display");
+      const messageElement = document.createElement("p");
+      messageElement.textContent = message;
+      messageElement.classList.add(className);
+      chatDisplay.appendChild(messageElement);
+      chatDisplay.scrollTop = chatDisplay.scrollHeight; // Scroll to the bottom
+    }
+    
+    // Fetch bot response from an external API
+    async function fetchBotResponse(input) {
+      jsonString = JSON.stringify({ input: input})
+      const API_URL = BASE_API_URL + "/api/agent/researchpaper"; // Replace with your API endpoint
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            'Accept': 'application/json', 
+
+          },
+          body: jsonString ,
+        })
+    
+        if (!response.ok) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          throw new Error(`Failed to fetch response. Status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        const botResponse = data.result || "I'm sorry, I couldn't process that."; // Default response
+        addMessage(botResponse, "bot-message");
+      } catch (error) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          addMessage("Error: Unable to fetch response from the API.", "bot-message");
+      }
+    }
+</script>

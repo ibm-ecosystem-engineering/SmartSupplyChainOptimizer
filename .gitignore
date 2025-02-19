@@ -1,0 +1,77 @@
+*.dat
+*.iml
+*.log
+*.out
+*.pid
+*.seed
+*.sublime-*
+*.swo
+*.swp
+*.tgz
+*.xml
+.idea
+.project
+.strong-pm
+*.history
+*.vscode
+.vscode
+**/.vscode
+
+.settings
+
+
+# credentials
+frame.jpg
+model/*
+venv
+vector
+
+
+myworkings
+
+####  ---------- General MAC ----------
+.DS_Store
+**/*.DS_Store
+*/.DS_Store
+
+####  ---------- General Python/Node/React ----------
+node_modules
+build
+.next
+**/.chroma
+
+*.db
+*.ipynb_checkpoints
+__pycache__
+*.parquet
+*.pkl
+*.bin
+
+
+.settings
+
+
+# credentials
+frame.jpg
+model/*
+venv
+vector
+
+*.db
+*.ipynb_checkpoints
+__pycache__
+*.parquet
+*.pkl
+*.bin
+
+####  ---------- General Projects ----------
+**/.env
+
+
+####  ---------- NextJS build. ----------
+out
+
+####  ---------- Project Specific Start ----------
+myvenv
+/output
+####  ---------- Project Specific End ----------
